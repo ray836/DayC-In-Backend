@@ -11,7 +11,7 @@ app.get("/test", (req, res) => {
 });
 
 app.post("/cool", (req, res) => {
-	res.send(`this is post ${JSON.stringify(req)}`)
+	res.send(`this is post`)
 })
 
 const port = 8080;
