@@ -10,6 +10,10 @@ app.get("/test", (req, res) => {
 	res.send("This is Test");
 });
 
+app.post("/cool", (req, res) => {
+	res.send(`this is post ${JSON.stringify(req)}`)
+})
+
 const port = 8080;
 app.listen(port, () => {
 	console.log(`Server started at http://localhost:${port}`);
