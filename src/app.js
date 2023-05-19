@@ -11,7 +11,7 @@ app.get("/test", (req, res) => {
 });
 
 app.post("/cool", (req, res) => {
-	res.send(`this is post`)
+	res.send(`this is post ${req.body}`)
 })
 
 const port = 8080;
