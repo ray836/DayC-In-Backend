@@ -10,7 +10,9 @@ function createUser() {
 		TableName: "CareProvider",
 		Item: {
 			"id": "test123",
-
+			"name": "Little Miners",
+			"Owner": "Jessica Peterson",
+			"Type": "Child Care (0-10)"
 		}
 	}
 
