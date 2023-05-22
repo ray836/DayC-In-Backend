@@ -7,7 +7,7 @@ const db = new aws.DynamoDB.DocumentClient({region: 'us-west-2'});
 
 function createUser() {
 	const params = {
-		TableName: "Provider",
+		TableName: "CareProvider",
 		Item: {
 			"id": "test123",
 
