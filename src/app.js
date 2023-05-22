@@ -1,6 +1,22 @@
 const express = require('express');
 const app = express();
 
+const aws = require('aws-sdk');
+
+const db = new aws.DynamoDB.DocumentClient({region: 'us-west-2'});
+
+function createUser() {
+	const params = {
+		TableName: "Provider",
+		Item: {
+			"id": "test123",
+
+		}
+	}
+
+	return db.put(params).promise();
+}
+
 app.get("/", (req, res) => {
 	res.send("Hello World!");
 	// res.sendStatus(500);
@@ -10,7 +26,8 @@ app.get("/test", (req, res) => {
 	res.send("This is Test");
 });
 
-app.post("/cool", (req, res) => {
+app.post("/cool", async (req, res) => {
+	await createUser();
 	res.send(`this is post ${req.body}`)
 })
 
